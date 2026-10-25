@@ -2,8 +2,8 @@
 
 Halaman web satu halaman untuk membantu mahasiswa memahami layanan administrasi akademik dan mengisi formulir permohonan. Dibuat dengan HTML5 dan CSS3 murni, tanpa JavaScript, framework, backend, database, atau aset dari domain luar.
 
-- Demo: https://nabielbreemer-art.github.io/tugas-portal-akademik/
-- Repository: https://github.com/nabielbreemer-art/tugas-portal-akademik
+- Demo: [https://nabielbreemer-art.github.io/tugas-portal-akademik/](https://nabielbreemer-art.github.io/tugas-portal-akademik/)
+- Repository: [https://github.com/nabielbreemer-art/tugas-portal-akademik](https://github.com/nabielbreemer-art/tugas-portal-akademik)
 
 Portal ini memakai identitas Universitas Pattimura, Ambon. Alamat gedung dan alamat email layanan pada halaman bersifat contoh, sesuaikan dengan data resmi kampus sebelum dipublikasikan.
 
@@ -15,11 +15,12 @@ tugas-portal-akademik/
 ├── css/
 │   └── styles.css
 ├── img/
+│   └── logo.png
 ├── evidence/
 └── README.md
 ```
 
-Folder `img/` disediakan jika nantinya diperlukan gambar lokal. Folder `evidence/` disediakan untuk screenshot hasil pengujian.
+Folder `img/` berisi logo universitas. Folder `evidence/` berisi screenshot hasil pengujian.
 
 ## Keputusan desain
 
@@ -56,40 +57,48 @@ Rasio dihitung dengan rumus WCAG untuk pasangan teks dan latar yang digunakan. S
 
 | Pemeriksaan | Status | Catatan |
 |---|---|---|
-| Urutan keyboard | Siap diuji | Ikuti urutan DOM; tidak menggunakan `tabindex` positif. |
+| Urutan keyboard | Lulus | Seluruh kontrol dicapai dengan Tab sesuai urutan tampil; skip link berfungsi; fokus terlihat pada setiap kontrol (lihat `keyboard-fokus.png`). |
 | Indikator fokus | Diimplementasikan | `:focus-visible` menggunakan outline kontras dan offset. |
 | Struktur heading | Diimplementasikan | Satu `h1`, lalu `h2` dan `h3` sesuai hierarki. |
 | Label formulir | Diimplementasikan | Setiap kontrol memiliki label yang terhubung; grup radio memakai `fieldset` dan `legend`. |
 | Teks bantuan | Diimplementasikan | Format NIM dan panjang keperluan terhubung melalui `aria-describedby`. |
-| Teks alternatif | Tidak ada gambar konten | SVG dekoratif disembunyikan dari teknologi bantu; tidak ada gambar informatif yang memerlukan alt. |
+| Teks alternatif | Diimplementasikan | Logo memakai `alt=""` (dekoratif, lihat bagian di bawah); ikon SVG disembunyikan dari teknologi bantu. |
 | Kontras warna | Dihitung | Pasangan utama pada tabel memenuhi kontras teks WCAG AA. |
 | Ukuran target sentuh | Diimplementasikan | Tautan navigasi, pilihan radio, kontrol, dan tombol memiliki tinggi minimum 44px. |
 | Reduced motion | Diimplementasikan | Gerakan dikurangi ketika preferensi sistem pengguna meminta demikian. |
 
 ## Temuan debugging
 
-Isi tabel ini setelah pemeriksaan manual. Catat masalah yang ditemukan, alat yang digunakan, perbaikannya, dan status akhirnya.
-
 | Masalah | Ditemukan lewat alat apa | Perbaikan | Status |
 |---|---|---|---|
-|  |  |  | Belum diperiksa |
+| Layout 360px, 768px, dan 1280px diperiksa: tidak ada scroll horizontal, teks tetap terbaca | Responsive Mode (Chrome DevTools) | Tidak diperlukan | Lulus |
+| Label form terhubung ke input (`for` dan `id` cocok); Name "Alamat email", Role `textbox`, Required `true` | Panel Accessibility dan Accessibility tree | Tidak diperlukan | Lulus |
+| Resource gagal atau 404 | Tab Network setelah reload | Tidak ada; 3 request sukses (HTML 304, CSS 200, logo 200) | Lulus |
+| Skor Lighthouse mobile: Accessibility 100, Best Practices 100, SEO 100, Performance 86 | Lighthouse | Performance 86 diterima karena halaman statis tanpa JavaScript | Diterima |
+| Form kosong, email salah (`abc`), dan data valid diuji | Uji manual di browser | Validasi HTML bawaan menolak input salah dan pesan error tampil per field | Lulus |
+| Tidak ada konfirmasi setelah form dikirim: halaman kembali ke atas dan data muncul di URL (`method="get"`, tanpa backend) | Uji manual submit dan bar alamat | Dicatat sebagai batasan demo; catatan "belum terhubung ke sistem pengiriman" ada di bawah tombol. Perbaikan lanjutan membutuhkan backend atau layanan form | Batasan diketahui |
 
 ## Alt kosong untuk gambar dekoratif
 
-Halaman memakai ikon SVG inline yang hanya bersifat dekoratif, sehingga tidak ada teks alternatif yang perlu dibacakan. Ikon diberi `aria-hidden="true"` dan `focusable="false"` agar tidak menambah pengumuman atau titik fokus yang tidak berguna. Tidak ada gambar informatif; bila gambar informatif ditambahkan kemudian, sertakan deskripsi yang bermakna.
+- **Logo universitas** (`img/logo.png`) memakai `alt=""`. Alasannya: logo berada di dalam tautan yang sudah punya nama jelas lewat `aria-label="Universitas Pattimura, beranda"`, dan nama kampus sudah ada sebagai teks di sebelahnya. Alt yang bermakna akan membuat pembaca layar membacakan informasi yang sama dua kali.
+- **Ikon SVG inline** (jam, panah, dokumen, kunci, dan lainnya) hanya bersifat dekoratif, diberi `aria-hidden="true"` dan `focusable="false"` agar tidak menambah pengumuman atau titik fokus yang tidak berguna.
+- Tidak ada gambar informatif lain. Bila ditambahkan kemudian, sertakan alt yang bermakna.
 
 ## Screenshot di folder `evidence/`
 
-Folder ini sengaja dikosongkan untuk screenshot hasil pengujian. Simpan berkas dengan nama berikut setelah menangkap bukti:
-
-| Berkas | Isi yang disarankan |
+| Berkas | Isi |
 |---|---|
 | `360px.png` | Tampilan halaman pada lebar viewport 360px. |
 | `768px.png` | Tampilan halaman pada lebar viewport 768px. |
 | `1280px.png` | Tampilan halaman pada lebar viewport 1280px. |
-| `network.png` | Panel Network setelah reload, untuk memeriksa tidak ada resource gagal atau 404. |
-| `accessibility.png` | Accessibility tree atau pemeriksaan aksesibilitas browser. |
-| `lighthouse.png` | Hasil Lighthouse untuk halaman. |
+| `elements.png` | Panel Elements: struktur DOM semantik dan CSS (Flexbox/Grid) pada form. |
+| `network.png` | Panel Network setelah reload; tidak ada resource gagal atau 404. |
+| `accessibility.png` | Accessibility tree dan properti Name, Role, Required pada field email. |
+| `lighthouse.png` | Hasil Lighthouse mobile: Accessibility 100, Best Practices 100, SEO 100, Performance 86. |
+| `validasi-kosong.png` | Form dikirim kosong; setiap field wajib menampilkan pesan error. |
+| `validasi-email.png` | Email `abc` ditolak dengan pesan format email. |
+| `validasi-berhasil.png` | Form terisi data valid. |
+| `keyboard-fokus.png` | Fokus keyboard terlihat pada field Alamat email (outline 3px). |
 
 ## Pengujian manual
 
@@ -105,18 +114,10 @@ Folder ini sengaja dikosongkan untuk screenshot hasil pengujian. Simpan berkas d
 
 ### Lokal
 
-Buka `index.html` langsung di browser, atau jalankan server statis dari folder proyek:
-
-```bash
-python3 -m http.server 8000
-```
-
-Lalu buka `http://localhost:8000`.
+Buka `index.html` langsung di browser. Tidak diperlukan instalasi atau perintah build.
 
 ### GitHub Pages
 
-Unggah isi folder proyek ke repository GitHub. Pada pengaturan repository, buka **Pages**, pilih branch dan folder publikasi yang berisi `index.html`, lalu simpan. Setelah proses publikasi selesai, gunakan tautan yang disediakan GitHub Pages.
+Situs ini diterbitkan lewat GitHub Pages dari branch `main` (folder root). Untuk menerbitkan sendiri: unggah isi folder proyek ke repository GitHub, buka **Settings → Pages**, pilih **Deploy from a branch**, pilih branch `main` dan folder `/ (root)`, lalu simpan. Tidak diperlukan perintah build.
 
-### Netlify
-
-Seret folder proyek ke halaman deploy manual Netlify, atau hubungkan repository dan atur folder publikasi ke direktori yang berisi `index.html`. Tidak diperlukan perintah build.
+Tautan hasil publikasi: https://nabielbreemer-art.github.io/tugas-portal-akademik/
