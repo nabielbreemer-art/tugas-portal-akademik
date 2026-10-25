@@ -1,0 +1,122 @@
+# Portal Layanan Akademik — Universitas Pattimura
+
+Halaman web satu halaman untuk membantu mahasiswa memahami layanan administrasi akademik dan mengisi formulir permohonan. Dibuat dengan HTML5 dan CSS3 murni, tanpa JavaScript, framework, backend, database, atau aset dari domain luar.
+
+- Demo: https://portal-layanan-unpatti.netlify.app
+- Repository: [Tambahkan tautan repository di sini]
+
+Portal ini memakai identitas Universitas Pattimura, Ambon. Alamat gedung dan alamat email layanan pada halaman bersifat contoh, sesuaikan dengan data resmi kampus sebelum dipublikasikan.
+
+## Struktur proyek
+
+```text
+tugas-portal-akademik/
+├── index.html
+├── css/
+│   └── styles.css
+├── img/
+├── evidence/
+└── README.md
+```
+
+Folder `img/` disediakan jika nantinya diperlukan gambar lokal. Folder `evidence/` disediakan untuk screenshot hasil pengujian.
+
+## Keputusan desain
+
+- **Warna:** biru tua dan biru digunakan untuk memberi kesan tepercaya dan mudah dikenali; latar biru pucat memisahkan bagian tanpa mengurangi keterbacaan. Warna hijau kebiruan menandai informasi layanan pendukung.
+- **Breakpoint:** halaman dimulai dari satu kolom; pada lebar 42rem alur dan kartu menjadi dua/tiga kolom, lalu pada 68rem bagian layanan menjadi empat kolom dan formulir menggunakan dua kolom. Titik perubahan mengikuti ruang yang dibutuhkan konten, bukan nama perangkat.
+- **Grid dan Flexbox:** CSS Grid mengatur kumpulan alur, kartu layanan, pilihan radio, serta pembagian formulir. Flexbox digunakan untuk navigasi, identitas portal, tombol, dan kelompok informasi yang perlu membungkus secara alami.
+- **Elemen semantik:** `header`, `nav`, `main`, `section`, `article`, `form`, `fieldset`, `legend`, `address`, dan `footer` menjelaskan tujuan konten. Judul mengikuti urutan `h1` → `h2` → `h3`. Satu tautan lewati ke konten utama membantu navigasi keyboard.
+- **Formulir:** validasi menggunakan atribut HTML bawaan. Formulir adalah demonstrasi tampilan; tanpa server, pengiriman tidak menyimpan atau meneruskan permohonan.
+- **Gerakan:** transisi singkat digunakan pada hover dan dihentikan atau dikurangi saat preferensi `prefers-reduced-motion` aktif.
+
+## Rasio kontras warna utama
+
+Rasio dihitung dengan rumus WCAG untuk pasangan teks dan latar yang digunakan. Semua pasangan teks normal dalam tabel memenuhi ambang WCAG AA, yaitu 4.5:1.
+
+| Warna teks | Warna latar | Rasio | Status |
+|---|---|---:|---|
+| `#102A43` | `#FFFFFF` | 14.64:1 | Lulus |
+| `#334E68` | `#FFFFFF` | 8.64:1 | Lulus |
+| `#486581` | `#FFFFFF` | 6.08:1 | Lulus |
+| `#145A8D` | `#FFFFFF` | 7.30:1 | Lulus |
+| `#0E436C` | `#FFFFFF` | 10.30:1 | Lulus |
+| `#0D625C` | `#FFFFFF` | 7.19:1 | Lulus |
+| `#102A43` | `#F5F8FC` | 13.75:1 | Lulus |
+| `#334E68` | `#F5F8FC` | 8.11:1 | Lulus |
+| `#486581` | `#F5F8FC` | 5.71:1 | Lulus |
+| `#102A43` | `#EAF2F9` | 12.95:1 | Lulus |
+| `#145A8D` | `#EAF2F9` | 6.45:1 | Lulus |
+| `#FFFFFF` | `#145A8D` | 7.30:1 | Lulus |
+| `#FFFFFF` | `#0E436C` | 10.30:1 | Lulus |
+| `#F1F5F9` | `#102A43` | 14.04:1 | Lulus |
+| `#D9E2EC` | `#102A43` | 11.27:1 | Lulus |
+
+## Checklist aksesibilitas
+
+| Pemeriksaan | Status | Catatan |
+|---|---|---|
+| Urutan keyboard | Siap diuji | Ikuti urutan DOM; tidak menggunakan `tabindex` positif. |
+| Indikator fokus | Diimplementasikan | `:focus-visible` menggunakan outline kontras dan offset. |
+| Struktur heading | Diimplementasikan | Satu `h1`, lalu `h2` dan `h3` sesuai hierarki. |
+| Label formulir | Diimplementasikan | Setiap kontrol memiliki label yang terhubung; grup radio memakai `fieldset` dan `legend`. |
+| Teks bantuan | Diimplementasikan | Format NIM dan panjang keperluan terhubung melalui `aria-describedby`. |
+| Teks alternatif | Tidak ada gambar konten | SVG dekoratif disembunyikan dari teknologi bantu; tidak ada gambar informatif yang memerlukan alt. |
+| Kontras warna | Dihitung | Pasangan utama pada tabel memenuhi kontras teks WCAG AA. |
+| Ukuran target sentuh | Diimplementasikan | Tautan navigasi, pilihan radio, kontrol, dan tombol memiliki tinggi minimum 44px. |
+| Reduced motion | Diimplementasikan | Gerakan dikurangi ketika preferensi sistem pengguna meminta demikian. |
+
+## Temuan debugging
+
+Isi tabel ini setelah pemeriksaan manual. Catat masalah yang ditemukan, alat yang digunakan, perbaikannya, dan status akhirnya.
+
+| Masalah | Ditemukan lewat alat apa | Perbaikan | Status |
+|---|---|---|---|
+|  |  |  | Belum diperiksa |
+
+## Alt kosong untuk gambar dekoratif
+
+Halaman memakai ikon SVG inline yang hanya bersifat dekoratif, sehingga tidak ada teks alternatif yang perlu dibacakan. Ikon diberi `aria-hidden="true"` dan `focusable="false"` agar tidak menambah pengumuman atau titik fokus yang tidak berguna. Tidak ada gambar informatif; bila gambar informatif ditambahkan kemudian, sertakan deskripsi yang bermakna.
+
+## Screenshot di folder `evidence/`
+
+Folder ini sengaja dikosongkan untuk screenshot hasil pengujian. Simpan berkas dengan nama berikut setelah menangkap bukti:
+
+| Berkas | Isi yang disarankan |
+|---|---|
+| `360px.png` | Tampilan halaman pada lebar viewport 360px. |
+| `768px.png` | Tampilan halaman pada lebar viewport 768px. |
+| `1280px.png` | Tampilan halaman pada lebar viewport 1280px. |
+| `network.png` | Panel Network setelah reload, untuk memeriksa tidak ada resource gagal atau 404. |
+| `accessibility.png` | Accessibility tree atau pemeriksaan aksesibilitas browser. |
+| `lighthouse.png` | Hasil Lighthouse untuk halaman. |
+
+## Pengujian manual
+
+1. Buka `index.html` di browser.
+2. Tekan `Tab` dari awal halaman. Pastikan tautan skip muncul saat fokus, urutan fokus logis, dan semua kontrol dapat dicapai.
+3. Uji layout pada lebar 360px, 768px, dan 1280px melalui Responsive Mode. Pastikan tidak ada gulir horizontal.
+4. Reload halaman dengan panel Network terbuka. Pastikan stylesheet berhasil dimuat dan tidak ada 404.
+5. Periksa Accessibility tree, label formulir, hierarki heading, dan tautan.
+6. Jalankan Lighthouse dan simpan bukti hasilnya ke folder `evidence/`.
+7. Coba kirim formulir dengan kolom kosong dan format NIM yang tidak sesuai. Browser seharusnya menampilkan validasi bawaan. Formulir ini tidak menyimpan atau mengirim data karena tidak memiliki backend.
+
+## Menjalankan dan menerbitkan
+
+### Lokal
+
+Buka `index.html` langsung di browser, atau jalankan server statis dari folder proyek:
+
+```bash
+python3 -m http.server 8000
+```
+
+Lalu buka `http://localhost:8000`.
+
+### GitHub Pages
+
+Unggah isi folder proyek ke repository GitHub. Pada pengaturan repository, buka **Pages**, pilih branch dan folder publikasi yang berisi `index.html`, lalu simpan. Setelah proses publikasi selesai, gunakan tautan yang disediakan GitHub Pages.
+
+### Netlify
+
+Seret folder proyek ke halaman deploy manual Netlify, atau hubungkan repository dan atur folder publikasi ke direktori yang berisi `index.html`. Tidak diperlukan perintah build.
