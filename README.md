@@ -2,7 +2,7 @@
 
 Halaman web satu halaman untuk membantu mahasiswa memahami layanan administrasi akademik dan mengisi formulir permohonan. Dibuat dengan HTML5 dan CSS3 murni, tanpa JavaScript, framework, backend, database, atau aset dari domain luar.
 
-- Demo: https://portal-layanan-unpatti.netlify.app
+- Demo: https://nabielbreemer-art.github.io/tugas-portal-akademik/
 - Repository: https://github.com/nabielbreemer-art/tugas-portal-akademik
 
 Portal ini memakai identitas Universitas Pattimura, Ambon. Alamat gedung dan alamat email layanan pada halaman bersifat contoh, sesuaikan dengan data resmi kampus sebelum dipublikasikan.
