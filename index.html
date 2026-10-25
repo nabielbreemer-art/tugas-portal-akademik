@@ -1,122 +1,209 @@
-# Portal Layanan Akademik — Universitas Pattimura
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102a43">
+    <meta name="description" content="Portal layanan akademik Universitas Pattimura untuk mengajukan kebutuhan administrasi mahasiswa.">
+    <title>Portal Layanan Akademik | Universitas Pattimura</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#konten-utama">Lewati ke konten utama</a>
+    <header class="kepala-situs">
+      <div class="wadah kepala-dalam">
+        <a class="identitas" href="#beranda" aria-label="Universitas Pattimura, beranda">
+          <img class="identitas-logo" src="img/logo.png" alt="" width="40" height="40">
+          <span class="identitas-teks">
+            <span class="nama-kampus">Universitas Pattimura</span>
+            <span class="nama-portal">Portal Layanan Akademik</span>
+          </span>
+        </a>
+        <nav class="navigasi-utama" aria-label="Navigasi utama">
+          <ul>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#permohonan">Ajukan permohonan</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-Halaman web satu halaman untuk membantu mahasiswa memahami layanan administrasi akademik dan mengisi formulir permohonan. Dibuat dengan HTML5 dan CSS3 murni, tanpa JavaScript, framework, backend, database, atau aset dari domain luar.
+    <main id="konten-utama">
+      <section class="sambutan" id="beranda" aria-labelledby="judul-sambutan">
+        <div class="wadah sambutan-dalam">
+          <div class="sambutan-teks">
+            <p class="label-atas">BIRO ADMINISTRASI AKADEMIK</p>
+            <h1 id="judul-sambutan">Urusan akademik, lebih mudah.</h1>
+            <p class="ringkasan-sambutan">Ajukan dokumen dan kebutuhan akademik secara terarah. Pilih layanan yang kamu butuhkan, isi formulir, lalu ikuti prosesnya bersama tim kami.</p>
+            <a class="tombol tombol-utama" href="#layanan">
+              Lihat layanan
+              <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+            </a>
+          </div>
+          <aside class="info-layanan" aria-label="Informasi layanan">
+            <span class="info-ikon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg>
+            </span>
+            <div>
+              <h2>Jam layanan</h2>
+              <p>Senin–Jumat, 08.00–16.00 WIT</p>
+              <p class="catatan-layanan">Permohonan diproses pada hari kerja.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
 
-- Demo: [https://nabielbreemer-art.github.io/tugas-portal-akademik/](https://nabielbreemer-art.github.io/tugas-portal-akademik/)
-- Repository: [https://github.com/nabielbreemer-art/tugas-portal-akademik](https://github.com/nabielbreemer-art/tugas-portal-akademik)
+      <section class="alur" aria-labelledby="judul-alur">
+        <div class="wadah">
+          <div class="judul-bagian">
+            <p class="label-atas">MULAI DARI SINI</p>
+            <h2 id="judul-alur">Tiga langkah sederhana</h2>
+          </div>
+          <ol class="daftar-alur">
+            <li>
+              <span class="nomor-langkah" aria-hidden="true">01</span>
+              <div><h3>Pilih layanan</h3><p>Temukan layanan yang sesuai dengan keperluanmu.</p></div>
+            </li>
+            <li>
+              <span class="nomor-langkah" aria-hidden="true">02</span>
+              <div><h3>Isi permohonan</h3><p>Lengkapi identitas dan jelaskan keperluan dengan jelas.</p></div>
+            </li>
+            <li>
+              <span class="nomor-langkah" aria-hidden="true">03</span>
+              <div><h3>Tunggu konfirmasi</h3><p>Tim akademik akan memproses sesuai estimasi layanan.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
 
-Portal ini memakai identitas Universitas Pattimura, Ambon. Alamat gedung dan alamat email layanan pada halaman bersifat contoh, sesuaikan dengan data resmi kampus sebelum dipublikasikan.
+      <section class="bagian-layanan" id="layanan" aria-labelledby="judul-layanan">
+        <div class="wadah">
+          <div class="judul-bagian judul-bagian-sebar">
+            <div>
+              <p class="label-atas">LAYANAN AKADEMIK</p>
+              <h2 id="judul-layanan">Apa yang kamu perlukan?</h2>
+            </div>
+            <p class="keterangan-bagian">Pilih layanan untuk melihat estimasi proses dan memulai permohonan.</p>
+          </div>
+          <div class="grid-layanan">
+            <article class="kartu-layanan">
+              <span class="ikon-layanan" aria-hidden="true">
+                <svg viewBox="0 0 28 28"><path d="M7 3.75h9l5 5V23a1.25 1.25 0 0 1-1.25 1.25H7A1.25 1.25 0 0 1 5.75 23V5A1.25 1.25 0 0 1 7 3.75Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"/><path d="M16 4v5h5M9.5 14h7m-7 4h9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7"/></svg>
+              </span>
+              <h3>Surat Aktif Kuliah</h3>
+              <p>Surat keterangan resmi sebagai mahasiswa aktif untuk keperluan administrasi.</p>
+              <p class="estimasi"><span>Estimasi proses</span><strong>2 hari kerja</strong></p>
+              <a class="tautan-layanan" href="#permohonan">Ajukan Surat Aktif Kuliah <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="kartu-layanan">
+              <span class="ikon-layanan" aria-hidden="true">
+                <svg viewBox="0 0 28 28"><path d="M4.75 7.5 14 3l9.25 4.5L14 12 4.75 7.5Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"/><path d="M4.75 12.5 14 17l9.25-4.5M4.75 17.5 14 22l9.25-4.5M4.75 7.5v10m18.5-10v10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg>
+              </span>
+              <h3>Transkrip Sementara</h3>
+              <p>Ringkasan hasil studi yang telah ditempuh selama masa perkuliahan.</p>
+              <p class="estimasi"><span>Estimasi proses</span><strong>3 hari kerja</strong></p>
+              <a class="tautan-layanan" href="#permohonan">Ajukan Transkrip Sementara <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="kartu-layanan">
+              <span class="ikon-layanan" aria-hidden="true">
+                <svg viewBox="0 0 28 28"><path d="M14 24s8-4 8-10V6l-8-3-8 3v8c0 6 8 10 8 10Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"/><path d="M10.5 13.5h7m-3.5-3.5v7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7"/></svg>
+              </span>
+              <h3>Cuti Akademik</h3>
+              <p>Permohonan izin tidak mengikuti kegiatan akademik untuk periode tertentu.</p>
+              <p class="estimasi"><span>Estimasi proses</span><strong>5 hari kerja</strong></p>
+              <a class="tautan-layanan" href="#permohonan">Ajukan Cuti Akademik <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="kartu-layanan">
+              <span class="ikon-layanan" aria-hidden="true">
+                <svg viewBox="0 0 28 28"><path d="M7 4h14a1.5 1.5 0 0 1 1.5 1.5v17A1.5 1.5 0 0 1 21 24H7a1.5 1.5 0 0 1-1.5-1.5v-17A1.5 1.5 0 0 1 7 4Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 9h10M9 13h6m-6 4h4m3.5 1.5 1.5 1.5 3-3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></svg>
+              </span>
+              <h3>Legalisir Ijazah</h3>
+              <p>Pengesahan salinan ijazah sebagai dokumen akademik resmi universitas.</p>
+              <p class="estimasi"><span>Estimasi proses</span><strong>4 hari kerja</strong></p>
+              <a class="tautan-layanan" href="#permohonan">Ajukan Legalisir Ijazah <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
 
-## Struktur proyek
+      <section class="bagian-formulir" id="permohonan" aria-labelledby="judul-permohonan">
+        <div class="wadah formulir-dalam">
+          <div class="pengantar-formulir">
+            <p class="label-atas">FORMULIR PENGAJUAN</p>
+            <h2 id="judul-permohonan">Sampaikan permohonanmu</h2>
+            <p>Isi data dengan benar agar tim akademik dapat membantu memproses kebutuhanmu.</p>
+            <div class="catatan-privasi">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10V7a5 5 0 0 1 10 0v3m-11 0h12a1 1 0 0 1 1 1v9H5v-9a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/><path d="M12 14v2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7"/></svg>
+              <p>Informasi yang kamu kirim digunakan untuk keperluan pemrosesan akademik.</p>
+            </div>
+          </div>
+          <form class="formulir" action="#" method="get">
+            <p class="petunjuk-wajib">Kolom bertanda <span aria-hidden="true">*</span> wajib diisi.</p>
+            <div class="baris-formulir">
+              <label for="nama-lengkap">Nama lengkap <span aria-hidden="true">*</span></label>
+              <input id="nama-lengkap" name="nama-lengkap" type="text" autocomplete="name" required>
+              <p class="pesan-error">Periksa kembali nama yang kamu masukkan.</p>
+            </div>
+            <div class="baris-formulir">
+              <label for="nim">Nomor induk mahasiswa (NIM) <span aria-hidden="true">*</span></label>
+              <input id="nim" name="nim" type="text" inputmode="numeric" pattern="[0-9]{8,12}" minlength="8" maxlength="12" aria-describedby="bantuan-nim" required>
+              <p class="bantuan-input" id="bantuan-nim">Masukkan 8–12 digit angka, tanpa spasi atau tanda baca.</p>
+              <p class="pesan-error">NIM harus terdiri dari 8–12 digit angka.</p>
+            </div>
+            <div class="baris-formulir">
+              <label for="email">Alamat email <span aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+              <p class="pesan-error">Masukkan alamat email dengan format yang benar.</p>
+            </div>
+            <fieldset class="pilihan-layanan">
+              <legend>Jenis layanan <span aria-hidden="true">*</span></legend>
+              <div class="daftar-pilihan">
+                <label class="pilihan-radio" for="layanan-surat">
+                  <input id="layanan-surat" name="jenis-layanan" type="radio" value="surat-aktif-kuliah" required>
+                  <span>Surat Aktif Kuliah</span>
+                </label>
+                <label class="pilihan-radio" for="layanan-transkrip">
+                  <input id="layanan-transkrip" name="jenis-layanan" type="radio" value="transkrip-sementara" required>
+                  <span>Transkrip Sementara</span>
+                </label>
+                <label class="pilihan-radio" for="layanan-cuti">
+                  <input id="layanan-cuti" name="jenis-layanan" type="radio" value="cuti-akademik" required>
+                  <span>Cuti Akademik</span>
+                </label>
+                <label class="pilihan-radio" for="layanan-legalisir">
+                  <input id="layanan-legalisir" name="jenis-layanan" type="radio" value="legalisir-ijazah" required>
+                  <span>Legalisir Ijazah</span>
+                </label>
+              </div>
+              <p class="pesan-error">Pilih salah satu jenis layanan.</p>
+            </fieldset>
+            <div class="baris-formulir">
+              <label for="keperluan">Jelaskan keperluanmu <span aria-hidden="true">*</span></label>
+              <textarea id="keperluan" name="keperluan" minlength="10" maxlength="500" rows="5" aria-describedby="bantuan-keperluan" required></textarea>
+              <p class="bantuan-input" id="bantuan-keperluan">Tuliskan minimal 10 karakter, maksimal 500 karakter.</p>
+              <p class="pesan-error">Keperluan harus diisi dengan 10–500 karakter.</p>
+            </div>
+            <button class="tombol tombol-kirim" type="submit">Kirim Permohonan <span aria-hidden="true">→</span></button>
+            <p class="catatan-kirim">Formulir ini merupakan demonstrasi antarmuka dan belum terhubung ke sistem pengiriman.</p>
+          </form>
+        </div>
+      </section>
+    </main>
 
-```text
-tugas-portal-akademik/
-├── index.html
-├── css/
-│   └── styles.css
-├── img/
-│   └── logo.png
-├── evidence/
-└── README.md
-```
-
-Folder `img/` berisi logo universitas. Folder `evidence/` berisi screenshot hasil pengujian.
-
-## Keputusan desain
-
-- **Warna:** biru tua dan biru digunakan untuk memberi kesan tepercaya dan mudah dikenali; latar biru pucat memisahkan bagian tanpa mengurangi keterbacaan. Warna hijau kebiruan menandai informasi layanan pendukung.
-- **Breakpoint:** halaman dimulai dari satu kolom; pada lebar 42rem alur dan kartu menjadi dua/tiga kolom, lalu pada 68rem bagian layanan menjadi empat kolom dan formulir menggunakan dua kolom. Titik perubahan mengikuti ruang yang dibutuhkan konten, bukan nama perangkat.
-- **Grid dan Flexbox:** CSS Grid mengatur kumpulan alur, kartu layanan, pilihan radio, serta pembagian formulir. Flexbox digunakan untuk navigasi, identitas portal, tombol, dan kelompok informasi yang perlu membungkus secara alami.
-- **Elemen semantik:** `header`, `nav`, `main`, `section`, `article`, `form`, `fieldset`, `legend`, `address`, dan `footer` menjelaskan tujuan konten. Judul mengikuti urutan `h1` → `h2` → `h3`. Satu tautan lewati ke konten utama membantu navigasi keyboard.
-- **Formulir:** validasi menggunakan atribut HTML bawaan. Formulir adalah demonstrasi tampilan; tanpa server, pengiriman tidak menyimpan atau meneruskan permohonan.
-- **Gerakan:** transisi singkat digunakan pada hover dan dihentikan atau dikurangi saat preferensi `prefers-reduced-motion` aktif.
-
-## Rasio kontras warna utama
-
-Rasio dihitung dengan rumus WCAG untuk pasangan teks dan latar yang digunakan. Semua pasangan teks normal dalam tabel memenuhi ambang WCAG AA, yaitu 4.5:1.
-
-| Warna teks | Warna latar | Rasio | Status |
-|---|---|---:|---|
-| `#102A43` | `#FFFFFF` | 14.64:1 | Lulus |
-| `#334E68` | `#FFFFFF` | 8.64:1 | Lulus |
-| `#486581` | `#FFFFFF` | 6.08:1 | Lulus |
-| `#145A8D` | `#FFFFFF` | 7.30:1 | Lulus |
-| `#0E436C` | `#FFFFFF` | 10.30:1 | Lulus |
-| `#0D625C` | `#FFFFFF` | 7.19:1 | Lulus |
-| `#102A43` | `#F5F8FC` | 13.75:1 | Lulus |
-| `#334E68` | `#F5F8FC` | 8.11:1 | Lulus |
-| `#486581` | `#F5F8FC` | 5.71:1 | Lulus |
-| `#102A43` | `#EAF2F9` | 12.95:1 | Lulus |
-| `#145A8D` | `#EAF2F9` | 6.45:1 | Lulus |
-| `#FFFFFF` | `#145A8D` | 7.30:1 | Lulus |
-| `#FFFFFF` | `#0E436C` | 10.30:1 | Lulus |
-| `#F1F5F9` | `#102A43` | 14.04:1 | Lulus |
-| `#D9E2EC` | `#102A43` | 11.27:1 | Lulus |
-
-## Checklist aksesibilitas
-
-| Pemeriksaan | Status | Catatan |
-|---|---|---|
-| Urutan keyboard | Siap diuji | Ikuti urutan DOM; tidak menggunakan `tabindex` positif. |
-| Indikator fokus | Diimplementasikan | `:focus-visible` menggunakan outline kontras dan offset. |
-| Struktur heading | Diimplementasikan | Satu `h1`, lalu `h2` dan `h3` sesuai hierarki. |
-| Label formulir | Diimplementasikan | Setiap kontrol memiliki label yang terhubung; grup radio memakai `fieldset` dan `legend`. |
-| Teks bantuan | Diimplementasikan | Format NIM dan panjang keperluan terhubung melalui `aria-describedby`. |
-| Teks alternatif | Diimplementasikan | Logo memakai `alt=""` (dekoratif, lihat bagian di bawah); ikon SVG disembunyikan dari teknologi bantu. |
-| Kontras warna | Dihitung | Pasangan utama pada tabel memenuhi kontras teks WCAG AA. |
-| Ukuran target sentuh | Diimplementasikan | Tautan navigasi, pilihan radio, kontrol, dan tombol memiliki tinggi minimum 44px. |
-| Reduced motion | Diimplementasikan | Gerakan dikurangi ketika preferensi sistem pengguna meminta demikian. |
-
-## Temuan debugging
-
-| Masalah | Ditemukan lewat alat apa | Perbaikan | Status |
-|---|---|---|---|
-| Layout 360px, 768px, dan 1280px diperiksa: tidak ada scroll horizontal, teks tetap terbaca | Responsive Mode (Chrome DevTools) | Tidak diperlukan | Lulus |
-| Label form terhubung ke input (`for` dan `id` cocok); Name "Alamat email", Role `textbox`, Required `true` | Panel Accessibility dan Accessibility tree | Tidak diperlukan | Lulus |
-| Resource gagal atau 404 | Tab Network setelah reload | Tidak ada; 3 request sukses (HTML 304, CSS 200, logo 200) | Lulus |
-| Skor Lighthouse mobile: Accessibility 100, Best Practices 100, SEO 100, Performance 86 | Lighthouse | Performance 86 diterima karena halaman statis tanpa JavaScript | Diterima |
-| Form kosong, email salah (`abc`), dan data valid diuji | Uji manual di browser | Validasi HTML bawaan menolak input salah dan pesan error tampil per field | Lulus |
-| Tidak ada konfirmasi setelah form dikirim: halaman kembali ke atas dan data muncul di URL (`method="get"`, tanpa backend) | Uji manual submit dan bar alamat | Dicatat sebagai batasan demo; catatan "belum terhubung ke sistem pengiriman" ada di bawah tombol. Perbaikan lanjutan membutuhkan backend atau layanan form | Batasan diketahui |
-
-## Alt kosong untuk gambar dekoratif
-
-- **Logo universitas** (`img/logo.png`) memakai `alt=""`. Alasannya: logo berada di dalam tautan yang sudah punya nama jelas lewat `aria-label="Universitas Pattimura, beranda"`, dan nama kampus sudah ada sebagai teks di sebelahnya. Alt yang bermakna akan membuat pembaca layar membacakan informasi yang sama dua kali.
-- **Ikon SVG inline** (jam, panah, dokumen, kunci, dan lainnya) hanya bersifat dekoratif, diberi `aria-hidden="true"` dan `focusable="false"` agar tidak menambah pengumuman atau titik fokus yang tidak berguna.
-- Tidak ada gambar informatif lain. Bila ditambahkan kemudian, sertakan alt yang bermakna.
-
-## Screenshot di folder `evidence/`
-
-| Berkas | Isi |
-|---|---|
-| `360px.png` | Tampilan halaman pada lebar viewport 360px. |
-| `768px.png` | Tampilan halaman pada lebar viewport 768px. |
-| `1280px.png` | Tampilan halaman pada lebar viewport 1280px. |
-| `elements.png` | Panel Elements: struktur DOM semantik dan CSS (Flexbox/Grid) pada form. |
-| `network.png` | Panel Network setelah reload; tidak ada resource gagal atau 404. |
-| `accessibility.png` | Accessibility tree dan properti Name, Role, Required pada field email. |
-| `lighthouse.png` | Hasil Lighthouse mobile: Accessibility 100, Best Practices 100, SEO 100, Performance 86. |
-| `validasi-kosong.png` | Form dikirim kosong; setiap field wajib menampilkan pesan error. |
-| `validasi-email.png` | Email `abc` ditolak dengan pesan format email. |
-| `validasi-berhasil.png` | Form terisi data valid. |
-
-## Pengujian manual
-
-1. Buka `index.html` di browser.
-2. Tekan `Tab` dari awal halaman. Pastikan tautan skip muncul saat fokus, urutan fokus logis, dan semua kontrol dapat dicapai.
-3. Uji layout pada lebar 360px, 768px, dan 1280px melalui Responsive Mode. Pastikan tidak ada gulir horizontal.
-4. Reload halaman dengan panel Network terbuka. Pastikan stylesheet berhasil dimuat dan tidak ada 404.
-5. Periksa Accessibility tree, label formulir, hierarki heading, dan tautan.
-6. Jalankan Lighthouse dan simpan bukti hasilnya ke folder `evidence/`.
-7. Coba kirim formulir dengan kolom kosong dan format NIM yang tidak sesuai. Browser seharusnya menampilkan validasi bawaan. Formulir ini tidak menyimpan atau mengirim data karena tidak memiliki backend.
-
-## Menjalankan dan menerbitkan
-
-### Lokal
-
-Buka `index.html` langsung di browser. Tidak diperlukan instalasi atau perintah build.
-
-### GitHub Pages
-
-Situs ini diterbitkan lewat GitHub Pages dari branch `main` (folder root). Untuk menerbitkan sendiri: unggah isi folder proyek ke repository GitHub, buka **Settings → Pages**, pilih **Deploy from a branch**, pilih branch `main` dan folder `/ (root)`, lalu simpan. Tidak diperlukan perintah build.
-
-Tautan hasil publikasi: https://nabielbreemer-art.github.io/tugas-portal-akademik/
+    <footer class="kaki-situs" id="kontak">
+      <div class="wadah kaki-dalam">
+        <div class="identitas-kaki">
+          <span class="nama-kampus">Universitas Pattimura</span>
+          <p>Mendampingi perjalanan akademikmu.</p>
+        </div>
+        <address class="kontak-kampus">
+          <span>Gedung Rektorat, Kampus Poka, Jl. Ir. M. Putuhena, Ambon 97233</span>
+          <span>Senin–Jumat, 08.00–16.00 WIT</span>
+          <a href="mailto:akademik@unpatti.ac.id">akademik@unpatti.ac.id</a>
+        </address>
+        <p class="hak-cipta">© 2026 Universitas Pattimura. Hak cipta dilindungi.</p>
+      </div>
+    </footer>
+  </body>
+</html>
