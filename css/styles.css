@@ -198,10 +198,29 @@ button {
 }
 
 .sambutan {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding-block: var(--jarak-6);
-  background:
-    radial-gradient(ellipse at 88% 12%, rgb(174 208 229 / 45%), transparent 29rem),
-    linear-gradient(115deg, #f5f8fc 0%, #edf4fa 62%, #e6f1f7 100%);
+  background: linear-gradient(115deg, #f5f8fc 0%, #edf4fa 62%, #e6f1f7 100%);
+}
+
+.sambutan-gambar {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.sambutan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgb(245 248 252 / 95%) 0%, rgb(237 244 250 / 90%) 100%);
 }
 
 .sambutan-dalam {
@@ -292,7 +311,7 @@ h1 {
   padding: var(--jarak-4);
   border: 1px solid #b7ccdc;
   border-radius: var(--radius-sedang);
-  background: rgb(255 255 255 / 84%);
+  background: rgb(255 255 255 / 94%);
   box-shadow: var(--bayangan-kartu);
 }
 
@@ -771,6 +790,10 @@ h1 {
 }
 
 @media (min-width: 68rem) {
+  .sambutan::before {
+    background: linear-gradient(90deg, rgb(245 248 252 / 97%) 0%, rgb(245 248 252 / 92%) 45%, rgb(237 244 250 / 25%) 100%);
+  }
+
   .sambutan-dalam {
     grid-template-columns: minmax(0, 1.4fr) minmax(17rem, 0.6fr);
     gap: var(--jarak-7);
