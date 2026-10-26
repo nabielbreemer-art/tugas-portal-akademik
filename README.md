@@ -15,12 +15,13 @@ tugas-portal-akademik/
 ├── css/
 │   └── styles.css
 ├── img/
-│   └── logo.png
+│   ├── logo.png
+│   └── rektorat.jpeg
 ├── evidence/
 └── README.md
 ```
 
-Folder `img/` berisi logo universitas. Folder `evidence/` berisi screenshot hasil pengujian.
+Folder `img/` berisi logo universitas dan foto gedung rektorat untuk bagian hero. Folder `evidence/` berisi screenshot hasil pengujian.
 
 ## Keputusan desain
 
@@ -73,8 +74,9 @@ Rasio dihitung dengan rumus WCAG untuk pasangan teks dan latar yang digunakan. S
 |---|---|---|---|
 | Layout 360px, 768px, dan 1280px diperiksa: tidak ada scroll horizontal, teks tetap terbaca | Responsive Mode (Chrome DevTools) | Tidak diperlukan | Lulus |
 | Label form terhubung ke input (`for` dan `id` cocok); Name "Alamat email", Role `textbox`, Required `true` | Panel Accessibility dan Accessibility tree | Tidak diperlukan | Lulus |
-| Resource gagal atau 404 | Tab Network setelah reload | Tidak ada; 3 request sukses (HTML 304, CSS 200, logo 200) | Lulus |
-| Skor Lighthouse mobile: Accessibility 100, Best Practices 100, SEO 100, Performance 86 | Lighthouse | Performance 86 diterima karena halaman statis tanpa JavaScript | Diterima |
+| Logo `logo.png` berukuran 265 kB padahal hanya tampil sekitar 40px | Tab Network (Size) | Gambar diperkecil menjadi 160x160px dan dikompres menjadi sekitar 28 kB | Selesai |
+| Resource gagal atau 404 | Tab Network setelah reload (Disable cache aktif) di GitHub Pages | Tidak ada; 4 request sukses semuanya berstatus 200 (HTML, CSS, logo, foto rektorat) | Lulus |
+| Skor Lighthouse mobile di GitHub Pages: Performance 97, Accessibility 100, Best Practices 100, SEO 100 | Lighthouse | Tidak diperlukan; foto hero sekitar 136 kB tidak menurunkan skor Performance di bawah kategori hijau | Lulus |
 | Form kosong, email salah (`abc`), dan data valid diuji | Uji manual di browser | Validasi HTML bawaan menolak input salah dan pesan error tampil per field | Lulus |
 | Tidak ada konfirmasi setelah form dikirim: halaman kembali ke atas dan data muncul di URL (`method="get"`, tanpa backend) | Uji manual submit dan bar alamat | Dicatat sebagai batasan demo; catatan "belum terhubung ke sistem pengiriman" ada di bawah tombol. Perbaikan lanjutan membutuhkan backend atau layanan form | Batasan diketahui |
 
@@ -92,9 +94,9 @@ Rasio dihitung dengan rumus WCAG untuk pasangan teks dan latar yang digunakan. S
 | `768px.png` | Tampilan halaman pada lebar viewport 768px. |
 | `1280px.png` | Tampilan halaman pada lebar viewport 1280px. |
 | `elements.png` | Panel Elements: struktur DOM semantik dan CSS (Flexbox/Grid) pada form. |
-| `network.png` | Panel Network setelah reload; tidak ada resource gagal atau 404. |
+| `network.png` | Panel Network setelah reload; empat resource berstatus 200 dan tidak ada yang gagal atau 404. |
 | `accessibility.png` | Accessibility tree dan properti Name, Role, Required pada field email. |
-| `lighthouse.png` | Hasil Lighthouse mobile: Accessibility 100, Best Practices 100, SEO 100, Performance 86. |
+| `lighthouse.png` | Hasil Lighthouse mobile: Performance 97, Accessibility 100, Best Practices 100, SEO 100. |
 | `validasi-kosong.png` | Form dikirim kosong; setiap field wajib menampilkan pesan error. |
 | `validasi-email.png` | Email `abc` ditolak dengan pesan format email. |
 | `validasi-berhasil.png` | Form terisi data valid. |
