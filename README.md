@@ -62,7 +62,7 @@ Rasio dihitung dengan rumus WCAG untuk pasangan teks dan latar yang digunakan. S
 | Struktur heading | Diimplementasikan | Satu `h1`, lalu `h2` dan `h3` sesuai hierarki. |
 | Label formulir | Diimplementasikan | Setiap kontrol memiliki label yang terhubung; grup radio memakai `fieldset` dan `legend`. |
 | Teks bantuan | Diimplementasikan | Format NIM dan panjang keperluan terhubung melalui `aria-describedby`. |
-| Teks alternatif | Diimplementasikan | Logo memakai `alt=""` (dekoratif, lihat bagian di bawah); ikon SVG disembunyikan dari teknologi bantu. |
+| Teks alternatif | Diimplementasikan | Foto gedung rektorat memakai alt yang bermakna; logo memakai `alt=""` (dekoratif, lihat bagian di bawah); ikon SVG disembunyikan dari teknologi bantu. |
 | Kontras warna | Dihitung | Pasangan utama pada tabel memenuhi kontras teks WCAG AA. |
 | Ukuran target sentuh | Diimplementasikan | Tautan navigasi, pilihan radio, kontrol, dan tombol memiliki tinggi minimum 44px. |
 | Reduced motion | Diimplementasikan | Gerakan dikurangi ketika preferensi sistem pengguna meminta demikian. |
@@ -82,7 +82,7 @@ Rasio dihitung dengan rumus WCAG untuk pasangan teks dan latar yang digunakan. S
 
 - **Logo universitas** (`img/logo.png`) memakai `alt=""`. Alasannya: logo berada di dalam tautan yang sudah punya nama jelas lewat `aria-label="Universitas Pattimura, beranda"`, dan nama kampus sudah ada sebagai teks di sebelahnya. Alt yang bermakna akan membuat pembaca layar membacakan informasi yang sama dua kali.
 - **Ikon SVG inline** (jam, panah, dokumen, kunci, dan lainnya) hanya bersifat dekoratif, diberi `aria-hidden="true"` dan `focusable="false"` agar tidak menambah pengumuman atau titik fokus yang tidak berguna.
-- Tidak ada gambar informatif lain. Bila ditambahkan kemudian, sertakan alt yang bermakna.
+- **Foto gedung rektorat** (`img/rektorat.jpeg`) pada bagian hero adalah gambar informatif, jadi memakai alt yang bermakna: "Gedung Rektorat Universitas Pattimura di Ambon dengan fasad merah dan langit biru". Foto diberi lapisan putih semi-transparan agar teks di atasnya tetap memenuhi kontras minimal 4,5:1.
 
 ## Screenshot di folder `evidence/`
 
